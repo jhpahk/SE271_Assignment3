@@ -119,6 +119,9 @@ void Ordered::add(int* arr, int size) {
 }
 
 int Ordered::operator[](int index) {
+	if (index >= m_size || index < 0) {
+		return std::numeric_limits<int>::min();
+	}
 	return ordered_list[index];
 }
 
